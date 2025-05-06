@@ -24,7 +24,7 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        hours = new NumberDisplay(12);
+        hours = new NumberDisplay(13);
         minutes = new NumberDisplay(60);
         updateDisplay();
     }
@@ -49,6 +49,9 @@ public class ClockDisplay
     {
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
+            hours.increment();
+        }
+        if(hours.getValue() == 0){
             hours.increment();
         }
         updateDisplay();
